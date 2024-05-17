@@ -1,0 +1,49 @@
+html,
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.step {
+  color: black;
+  margin: 0;
+}
+
+.playground {
+  background-image: url("./assets/grass.png");
+}
+
+.pikachu {
+  position: relative;
+  transition: 0.5s;
+}
+.pikachu.left {
+  transform: rotateY(180deg);
+}
+.pikachu.right {
+  transform: rotateY(0);
+}
+.pikachu-container.jump {
+  transform: translateY(5px);
+  animation: jump 0.2s linear;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
