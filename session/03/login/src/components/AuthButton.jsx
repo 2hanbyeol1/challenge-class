@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { LOG_IN, LOG_OUT } from "../redux/reducers/auth.reducer";
+import { logIn, logOut } from "../redux/reducers/auth.reducer";
 
 function AuthButton() {
   const dispatch = useDispatch(); // 6-1. 우체부 생성
@@ -7,9 +7,12 @@ function AuthButton() {
 
   const handleClickButton = () => {
     // 5. action 작업 명세서 작성
-    const action = {
-      type: isLoggedIn ? LOG_OUT : LOG_IN,
-    };
+    // const action = {
+    //   type: isLoggedIn ? LOG_OUT : LOG_IN,
+    // };
+
+    // +) action creator를 이용한 작업 명세서 작성
+    const action = isLoggedIn ? logOut() : logIn();
     dispatch(action); // 6-2. 우체부가 공장에 전달
   };
 

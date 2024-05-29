@@ -1,7 +1,11 @@
 // 3-1. action type 생성
 // 관습적으로 액션 타입은 상수로 정의한다.
-export const LOG_IN = "auth/LOG_IN";
-export const LOG_OUT = "auth/LOG_OUT";
+const LOG_IN = "auth/LOG_IN";
+const LOG_OUT = "auth/LOG_OUT";
+
+// +) action creator
+export const logIn = () => ({ type: LOG_IN });
+export const logOut = () => ({ type: LOG_OUT });
 
 // 3-2. state의 초기값 지정
 const initialState = {
